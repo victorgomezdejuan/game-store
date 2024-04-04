@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:5240
+
+# Get all games
+GET {{baseUrl}}/games
+
+###
+# Get game by id
+GET {{baseUrl}}/games/1
+
+###
+# Try to get a non-existing game
+GET {{baseUrl}}/games/44
+
+###
+# Create a new game
+POST {{baseUrl}}/games
+Content-Type: application/json
+
+{
+  "name": "Minecraft",
+  "genre": "Kids and Family",
+  "price": 19.99,
+  "releaseDate": "1991-02-01T00:00:00"
+}
+
+###
+# Update a game
+PUT {{baseUrl}}/games/1
+Content-Type: application/json
+
+{
+  "name": "Street Figther II Turbo",
+  "genre": "Fighting",
+  "price": 9.99,
+  "releaseDate": "1991-02-01T00:00:00"
+}
+
+###
+# Create a game (PUT)
+PUT {{baseUrl}}/games/4
+Content-Type: application/json
+
+{
+  "name": "Minecraft",
+  "genre": "Kids and Family",
+  "price": 19.99,
+  "releaseDate": "1991-02-01T00:00:00"
+}
+
+###
+# Delete a game
+DELETE {{baseUrl}}/games/2
